@@ -1,10 +1,12 @@
-package com.jmmv.back;
+package com.jmmv.back.models;
 
 import javax.persistence.*;
 
 
 @Entity
-public class Clients {
+@Table(name = "users")
+
+public class Client {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +21,7 @@ public class Clients {
     private  String email;
     private  String cp;
     
-    public Clients(long id, String civilite, String nom, String prenom, String adresse, String telephone, String fax,
+    public Client(long id, String civilite, String nom, String prenom, String adresse, String telephone, String fax,
 			String email, String cp) {
 		super();
 		this.id = id;
@@ -32,6 +34,10 @@ public class Clients {
 		this.email = email;
 		this.cp = cp;
 	}
+    
+    public Client() {
+	}
+    
 	public long getId() {
 		return id;
 	}
@@ -89,4 +95,3 @@ public class Clients {
 	
 
 }
-
