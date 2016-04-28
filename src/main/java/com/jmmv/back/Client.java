@@ -1,4 +1,4 @@
-package com.jmmv.back.models;
+package com.jmmv.back;
 
 import javax.persistence.*;
 
