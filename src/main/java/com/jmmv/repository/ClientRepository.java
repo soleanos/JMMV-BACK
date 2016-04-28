@@ -8,8 +8,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.jmmv.back.models.Client;
 
-@RepositoryRestResource(collectionResourceRel = "clients", path = "clients")
-public interface ClientsRepository extends PagingAndSortingRepository<Client, Long> {
+@RepositoryRestResource(collectionResourceRel = "client", path = "clients")
+public interface ClientRepository extends PagingAndSortingRepository<Client, Long> {
 
 	List<Client> findByNom(@Param("nom") String nom);
 
