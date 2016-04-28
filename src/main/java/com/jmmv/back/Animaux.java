@@ -12,8 +12,7 @@ public class Animaux {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
-	private long id;
-	
+	private long idAnimaux;	
 	private String creation;
 	private String nom;
 	private String espece;
@@ -30,11 +29,17 @@ public class Animaux {
 	private String notes;
 	private Boolean decede;
 	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="idClient")
+	private Client client;
+	
+	
 	public Animaux(long id, String creation, String nom, String espece, String couleur, Date datedenaissance,
 			String certitude, String sexe, String sterilisation, int numpuce, int numtatouage, String affixe,
-			String reproduction, String notes, boolean decede) {
+			String reproduction, String notes, boolean decede,Client client) {
+		
 		super();
-		this.id = id;
+		this.idAnimaux = id;
 		this.creation = creation;
 		this.nom = nom;
 		this.espece = espece;
@@ -49,14 +54,18 @@ public class Animaux {
 		this.reproduction = reproduction;
 		this.notes = notes;
 		this.decede = decede;
+		this.client = client;
 	}
 	
-	public long getId() {
-		return id;
+	public Animaux(){}
+	
+
+	public long getIdAnimaux() {
+		return idAnimaux;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdAnimaux(long idAnimaux) {
+		this.idAnimaux = idAnimaux;
 	}
 
 	public String getCreation() {
@@ -179,6 +188,13 @@ public class Animaux {
 		this.decede = decede;
 	}
 	
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 	
 	
 	

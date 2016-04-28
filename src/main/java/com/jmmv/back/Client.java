@@ -1,5 +1,7 @@
 package com.jmmv.back;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -10,8 +12,8 @@ public class Client {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private  long id;
-    
+	
+    private  long idClient;
 	private  String civilite;
     private  String nom;
     private  String prenom;
@@ -21,10 +23,14 @@ public class Client {
     private  String email;
     private  String cp;
     
+    @OneToMany(mappedBy="client")
+    private List<Animaux> animaux;
+    
+    
     public Client(long id, String civilite, String nom, String prenom, String adresse, String telephone, String fax,
 			String email, String cp) {
 		super();
-		this.id = id;
+		this.idClient = id;
 		this.civilite = civilite;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -39,10 +45,10 @@ public class Client {
 	}
     
 	public long getId() {
-		return id;
+		return  idClient;
 	}
 	public void setId(long id) {
-		this.id = id;
+		this.idClient = id;
 	}
 	public String getCivilite() {
 		return civilite;
