@@ -35,7 +35,7 @@ public class Animal {
 	private Client client;
 	
 	@OneToMany(mappedBy="animal")
-    private List<Vaccinations> vaccinations;
+    private List<Vaccination> vaccination;
 	
 	public Animal(long id, String creation, String nom, String espece, String couleur, Date datedenaissance,
 			String certitude, String sexe, String sterilisation, int numpuce, int numtatouage, String affixe,

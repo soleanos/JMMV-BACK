@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="vaccinations")
 
-public class Vaccinations {
+public class Vaccination {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,7 +35,7 @@ public class Vaccinations {
 	@JoinColumn(name="idAnimal")
 	private Animal animal;
 	
-	public Vaccinations(long id, String intervenant, 
+	public Vaccination(long id, String intervenant, 
 			Date datevacc, String vaccin, String notes, String temperature, 
 			Date consvacc, String cerfa, String type,
 			String labo, String lot, String cerfa1, 
@@ -61,7 +61,7 @@ public class Vaccinations {
 		
 	}
 	
-	public Vaccinations() {
+	public Vaccination() {
 	}
 
 	public long getId() {
