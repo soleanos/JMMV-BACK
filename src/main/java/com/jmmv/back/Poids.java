@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="poids")
 
-public class Poid {
+public class Poids {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +23,7 @@ public class Poid {
 	@JoinColumn(name="idAnimal")
 	private Animal animal;
 	
-	public Poid(long id, Date date,String intervenant, double poids, String commentaires) {
+	public Poids(long id, Date date,String intervenant, double poids, String commentaires) {
 		
 		super();
 		this.idPoid = id;
@@ -33,7 +33,7 @@ public class Poid {
 		this.commentaires = commentaires;
 	}
 	
-	public Poid() {
+	public Poids() {
 	}
 	
 	

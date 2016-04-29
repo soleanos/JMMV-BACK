@@ -8,5 +8,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "photo", path = "photo")
 public interface PhotoRepository extends PagingAndSortingRepository<Photo, String> {
-	List<Poid> findByPhoto(@Param("photo") String photo);
+	List<Poids> findByPhoto(@Param("photo") String photo);
 }
