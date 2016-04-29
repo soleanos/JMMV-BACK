@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "poid", path = "poid")
-public interface PoidRepository extends PagingAndSortingRepository<Poid, Double> {
-	List<Poid> findByPoids(@Param("poids") double poids);
+public interface PoidsRepository extends PagingAndSortingRepository<Poids, Double> {
+	List<Poids> findByPoids(@Param("poids") double poids);
 }

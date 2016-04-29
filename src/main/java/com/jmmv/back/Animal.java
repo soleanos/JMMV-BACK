@@ -47,7 +47,7 @@ public class Animal {
     private List<VenteAliments> venteAliments;
 	
 	@OneToMany(mappedBy="animal")
-    private List<Poid> poids;
+    private List<Poids> poids;
 	
 	public Animal(long id, String creation, String nom, String espece, String couleur, Date datedenaissance,
 			String certitude, String sexe, String sterilisation, int numpuce, int numtatouage, String affixe,
