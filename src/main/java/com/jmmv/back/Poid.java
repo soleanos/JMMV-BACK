@@ -7,38 +7,37 @@ import javax.persistence.*;
 @Entity
 @Table(name="poids")
 
-public class Poids {
+public class Poid {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
-	private long id;
+	private long idPoid;
 
-	//private long idAnimal;
 	private Date date;
 	private String intervenant;
 	private double poids;
 	private String commentaires;
 	
-	public Poids(long id, Date date,String intervenant, double poids, String commentaires) {
+	public Poid(long id, Date date,String intervenant, double poids, String commentaires) {
 		
 		super();
-		this.id = id;
+		this.idPoid = id;
 		this.date = date;
 		this.intervenant = intervenant;
 		this.poids = poids;
 		this.commentaires = commentaires;
 	}
 	
-	public Poids() {
+	public Poid() {
 	}
 	
 	
 	public long getId() {
-		return id;
+		return idPoid;
 	}
 	public void setId(long id) {
-		this.id = id;
+		this.idPoid = id;
 	}
 	public Date getDate() {
 		return date;

@@ -24,7 +24,7 @@ public class Client {
     private  String cp;
     
     @OneToMany(mappedBy="client")
-    private List<Animaux> animaux;
+    private List<Animal> animaux;
     
     
     public Client(long id, String civilite, String nom, String prenom, String adresse, String telephone, String fax,

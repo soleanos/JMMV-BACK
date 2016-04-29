@@ -1,18 +1,19 @@
 package com.jmmv.back;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="animals")
+@Table(name="animaux")
 
-public class Animaux { 
+public class Animal { 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
-	private long idAnimaux;	
+	private long idAnimal;	
 	private String creation;
 	private String nom;
 	private String espece;
@@ -33,13 +34,15 @@ public class Animaux {
 	@JoinColumn(name="idClient")
 	private Client client;
 	
+	@OneToMany(mappedBy="animal")
+    private List<Vaccinations> vaccinations;
 	
-	public Animaux(long id, String creation, String nom, String espece, String couleur, Date datedenaissance,
+	public Animal(long id, String creation, String nom, String espece, String couleur, Date datedenaissance,
 			String certitude, String sexe, String sterilisation, int numpuce, int numtatouage, String affixe,
 			String reproduction, String notes, boolean decede,Client client) {
 		
 		super();
-		this.idAnimaux = id;
+		this.idAnimal = id;
 		this.creation = creation;
 		this.nom = nom;
 		this.espece = espece;
@@ -57,15 +60,15 @@ public class Animaux {
 		this.client = client;
 	}
 	
-	public Animaux(){}
+	public Animal(){}
 	
 
-	public long getIdAnimaux() {
-		return idAnimaux;
+	public long getIdAnimal() {
+		return idAnimal;
 	}
 
-	public void setIdAnimaux(long idAnimaux) {
-		this.idAnimaux = idAnimaux;
+	public void setIdAnimal(long idAnimal) {
+		this.idAnimal = idAnimal;
 	}
 
 	public String getCreation() {
