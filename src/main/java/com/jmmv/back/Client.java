@@ -25,8 +25,7 @@ public class Client {
     
     @OneToMany(mappedBy="client")
     private List<Animal> animaux;
-    
-    
+        
     public Client(long id, String civilite, String nom, String prenom, String adresse, String telephone, String fax,
 			String email, String cp) {
 		super();

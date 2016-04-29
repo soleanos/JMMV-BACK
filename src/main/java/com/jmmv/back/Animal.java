@@ -12,8 +12,8 @@ public class Animal {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idAnimal;
 	
-	private long idAnimal;	
 	private String creation;
 	private String nom;
 	private String espece;

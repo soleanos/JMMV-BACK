@@ -5,37 +5,37 @@ import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name="ventealiments")
+@Table(name="venteAliments")
 
-public class Ventealiments {
+public class VenteAliments {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
-	private long id;
+	private long idVenteAliments;
 	
 	private String intervenant;
 	private Date date;
 	private String aliments;
 	
-	public Ventealiments(long id, String intervenant, Date date, String aliments) {
+	public VenteAliments(long id, String intervenant, Date date, String aliments) {
 		
 		super();
-		this.id = id;
+		this.idVenteAliments = id;
 		this.intervenant = intervenant;
 		this.date = date;
 		this.aliments = aliments;
 	}
 
-	public Ventealiments() {
+	public VenteAliments() {
 	}
 	
 	public long getId() {
-		return id;
+		return idVenteAliments;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this.idVenteAliments = id;
 	}
 
 	public String getIntervenant() {

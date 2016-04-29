@@ -12,7 +12,7 @@ public class Vaccination {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
-	private long id;
+	private long idVaccination;
 	
 	private String intervenants;
 	private Date datevacc;
@@ -42,7 +42,7 @@ public class Vaccination {
 			String intervenant1, Date date1, String type1, String rappelchoix,
 	 String rappel) {
 		super();
-		this.id = id;
+		this.idVaccination = id;
 		this.datevacc = datevacc;
 		this.vaccin = vaccin;
 		this.notes = notes;
@@ -65,11 +65,11 @@ public class Vaccination {
 	}
 
 	public long getId() {
-		return id;
+		return idVaccination;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this.idVaccination = id;
 	}
 
 	public String getIntervenants() {
