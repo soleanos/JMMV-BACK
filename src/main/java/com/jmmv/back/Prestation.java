@@ -22,6 +22,10 @@ public class Prestation {
 	private String compteRendu;
 	private String recommandations;
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="idAnimal")
+	private Animal animal;
+	
 	public Prestation(long idPrestation, String intervenant, Date datePrestation, String motif, String notes,
 			int temperature, String compteRendu, String recommandations) {
 		super();

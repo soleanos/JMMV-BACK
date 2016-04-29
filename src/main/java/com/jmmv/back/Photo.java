@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "photos")
@@ -20,6 +20,13 @@ public class Photo {
 	private String photo;
 	private String titre;
 	private String description;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "motClePhoto_Photo", 
+             joinColumns = { @JoinColumn(name = "idPhoto") }, 
+             inverseJoinColumns = { @JoinColumn(name = "idMotsclephoto") })
+	private List<MotsClePhoto> motsCle ; 
+	
 	
 	public Photo(long idPhoto, Date datePhoto, String intervenant, String photo, String titre, String description) {
 		super();

@@ -31,7 +31,7 @@ public class Vaccination {
 	private String rappelchoix;
 	private String rappel;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="idAnimal")
 	private Animal animal;
 	

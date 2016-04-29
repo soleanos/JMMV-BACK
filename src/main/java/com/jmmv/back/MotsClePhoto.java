@@ -1,13 +1,13 @@
 package com.jmmv.back;
 
-//import java.util.List;
+import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name= "motsclephoto")
 
-public class Motsclephoto {
+public class MotsClePhoto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,11 +16,16 @@ public class Motsclephoto {
 	private String idphoto;
 	private String motcle;
 	
-	//@ManyToMany(mappedBy="photo")
-	//private List<Photo> photo;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "motClePhoto_Photo", 
+             joinColumns = { @JoinColumn(name = "idMotsclephoto") }, 
+             inverseJoinColumns = { @JoinColumn(name = "idPhoto") })
+	
+	private List<MotsClePhoto> motsCle ; 
 	
 	
-	public Motsclephoto(long idMotsclephoto, String idphoto, String motcle) {
+	public MotsClePhoto(long idMotsclephoto, String idphoto, String motcle) {
 		
 		super();
 		this.idMotsclephoto = idMotsclephoto;
@@ -28,7 +33,7 @@ public class Motsclephoto {
 		this.motcle = motcle;
 	}
 	
-	public Motsclephoto() {
+	public MotsClePhoto() {
 	}
 
 	public long getIdMotsclephoto() {

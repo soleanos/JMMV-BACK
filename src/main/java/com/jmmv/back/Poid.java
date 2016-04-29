@@ -19,6 +19,10 @@ public class Poid {
 	private double poids;
 	private String commentaires;
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="idAnimal")
+	private Animal animal;
+	
 	public Poid(long id, Date date,String intervenant, double poids, String commentaires) {
 		
 		super();

@@ -30,12 +30,24 @@ public class Animal {
 	private String notes;
 	private Boolean decede;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="idClient")
 	private Client client;
 	
 	@OneToMany(mappedBy="animal")
-    private List<Vaccination> vaccination;
+    private List<Vaccination> vaccinations;
+	
+	@OneToMany(mappedBy="animal")
+    private List<Prescription> prescriptions;
+	
+	@OneToMany(mappedBy="animal")
+    private List<Prestation> prestations;
+	
+	@OneToMany(mappedBy="animal")
+    private List<VenteAliments> venteAliments;
+	
+	@OneToMany(mappedBy="animal")
+    private List<Poid> poids;
 	
 	public Animal(long id, String creation, String nom, String espece, String couleur, Date datedenaissance,
 			String certitude, String sexe, String sterilisation, int numpuce, int numtatouage, String affixe,

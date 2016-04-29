@@ -1,10 +1,5 @@
 package com.jmmv.back;
-
-import java.util.Date;
-import java.util.List;
-
 import javax.persistence.*;
-
 
 @Entity
 @Table(name = "prescriptions")
@@ -19,6 +14,10 @@ public class Prescription {
 	private int posologie;
 	private String renouvellement;
 	private String vetoPharma;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="idAnimal")
+	private Animal animal;
 	
 	public Prescription(long idPrescription, String specialite, int posologie, String renouvellement,
 			String vetoPharma) {

@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "motsclephoto", path = "motsclephoto")
-public interface MotsclephotoRepository extends PagingAndSortingRepository<Motsclephoto, Long> {
-	List<Motsclephoto> findBymotcle(@Param("motcle") String motcle);
+public interface MotsclephotoRepository extends PagingAndSortingRepository<MotsClePhoto, Long> {
+	List<MotsClePhoto> findBymotcle(@Param("motcle") String motcle);
 }

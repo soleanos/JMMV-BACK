@@ -18,6 +18,10 @@ public class VenteAliments {
 	private Date date;
 	private String aliments;
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="idAnimal")
+	private Animal animal;
+	
 	public VenteAliments(long id, String intervenant, Date date, String aliments) {
 		
 		super();
